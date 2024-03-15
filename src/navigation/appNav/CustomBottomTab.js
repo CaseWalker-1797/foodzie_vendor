@@ -12,6 +12,7 @@ import usePath from "./usePath"
 import { SCREEN_WIDTH } from "../../utilities/Dimensions"
 import AnimatedCircle from "./navComponents/AnimatedCirle"
 import { getPathXCenter } from "./Path"
+import TabItem from "./navComponents/TabItem"
 
 const AnimatedPath = Animated.createAnimatedComponent(Path)
 export const CustomBottomTab = ({ state, descriptors, navigation }) => {

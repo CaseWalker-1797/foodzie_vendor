@@ -7,7 +7,8 @@ import CustomBottomTab from './src/navigation/appNav/CustomBottomTab';
 const App = () => {
   return (
     <SafeAreaProvider>
-      <CustomBottomTab/>
+      {/* <CustomBottomTab/> */}
+      <AppNav />
     </SafeAreaProvider>
   );
 };
