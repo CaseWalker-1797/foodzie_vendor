@@ -4,10 +4,18 @@ import OrderCard from './OrderCard';
 import {getOrder} from '../../api/API';
 
 const MealCard = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getOrder().then(data1 => {
+      setData(data1);
+    });
+  }, []);
+
   const renderData = ({item}) => {
     return (
       <View
-        className="bg-white my-2 p-1 border border-gray-100 rounded-2xl"
+        className="bg-white m-2 p-1 border border-gray-100 rounded-2xl"
         style={styles.container}>
         <OrderCard item={item} />
       </View>
@@ -15,7 +23,7 @@ const MealCard = () => {
   };
   return (
     <View className="space-y-2">
-      <FlatList data={getOrder} renderItem={renderData} />
+      <FlatList data={data} renderItem={renderData} />
     </View>
   );
 };

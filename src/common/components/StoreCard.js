@@ -1,14 +1,23 @@
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import {Icon, IconButton} from 'react-native-paper';
-import {accountOptions} from '../constants/Constants';
 import OrderCard from './OrderCard';
 import {themeColors} from '../utilities/theme';
+import { getOrder } from '../../api/API';
 
 const StoreCard = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getOrder().then(data1 => {
+      setData(data1);
+    });
+  }, []);
+
   const renderData = ({item}) => {
-    return <OrderCard item={item} />;
+    // return <OrderCard item={item} />;
   };
+
   return (
     <View
       className="bg-white justify-center border border-gray-100 m-2 space-y-2 rounded-2xl"
@@ -33,7 +42,7 @@ const StoreCard = () => {
         </View>
         <Text className="font-medium">Address of Restaurant</Text>
       </View>
-      <FlatList data={accountOptions} renderItem={renderData} />
+      <FlatList data={data} renderItem={renderData} />
     </View>
   );
 };
