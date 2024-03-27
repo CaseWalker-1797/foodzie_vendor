@@ -5,4 +5,5 @@ export const Drawable = {
   ForgotPassword: require('../../assets/images/vector/forgotPasswordImage.png'),
 
   //Miscellaneous
+  Loading: require('../../assets/images/vector/splashScreenImage.png'),
 };

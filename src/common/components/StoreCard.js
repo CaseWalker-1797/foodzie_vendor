@@ -15,7 +15,7 @@ const StoreCard = () => {
   }, []);
 
   const renderData = ({item}) => {
-    // return <OrderCard item={item} />;
+    return <OrderCard item={item} />;
   };
 
   return (

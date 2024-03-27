@@ -5,6 +5,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Drawable} from '../common/utilities/Drawables';
 import {verticalScale} from '../common/utilities/Dimension';
+import * as Animatable from 'react-native-animatable';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
@@ -17,16 +18,29 @@ const SplashScreen = () => {
     const value = await AsyncStorage.getItem('userToken');
     console.log('value', value);
     setTimeout(() => {
-      navigation.navigate(value ? 'App' : 'Auth');
+      navigation.navigate(value ? 'Auth' : 'Auth');
     }, 3000);
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView className="flex-1 items-center bg-white">
       <Image
-        source={Drawable.SignUp}
-        style={{height: verticalScale(500), width: '100%'}}
+        source={Drawable.Loading}
+        style={{
+          resizeMode: 'contain',
+          height: verticalScale(495),
+          width: '100%',
+        }}
       />
+      <Animatable.Text
+        animation="flash"
+        easing="ease-out"
+        delay={1500}
+        duration={3000}
+        // iterationCount="infinite"
+        className="text-2xl font-bold">
+        We'll be there soon...
+      </Animatable.Text>
     </SafeAreaView>
   );
 };

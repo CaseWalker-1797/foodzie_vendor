@@ -36,8 +36,8 @@ const OrderCard = ({item}) => {
               {item.item.map((item1, index) => (
                 <View className="flex-row justify-between p-2" key={index}>
                   <Text>
-                    {item1.foodItem.foodItem +'     '}
-                    <Text> x{item1.qunatity}</Text>
+                    {item1.foodItem.foodItem + '     '}
+                    <Text> x{' ' + item1.quantity}</Text>
                   </Text>
                   <Text>₹ {item1.foodItem.price}</Text>
                 </View>

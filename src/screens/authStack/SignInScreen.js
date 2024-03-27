@@ -29,7 +29,7 @@ const SignInScreen = () => {
       onToggleSnackBar();
       setMsg(msg2 + email);
       console.log('after++++++++++++++++', email, password);
-      navigation.navigate('App');
+      navigation.navigate('PersonalInfo');
     }
   };
   return (
