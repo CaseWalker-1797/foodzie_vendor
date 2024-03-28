@@ -2,7 +2,7 @@ import Axios from 'react-native-axios';
 import _ from 'lodash';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const urlFor = 'http://192.168.1.11:3000';
+export const urlFor = 'http://192.168.1.7:3000';
 
 export const newUser = ({name, email, password, confirmPassword}) => {
   Axios.post(urlFor + '/api/v1/user/signup', {
