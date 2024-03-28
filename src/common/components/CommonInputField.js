@@ -1,15 +1,17 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, TextInput, View} from 'react-native';
+import React, {useState} from 'react';
 
-const CommonInputField = ({key, item}) => {
+const CommonInputField = ({item}) => {
+  const [value, setValue] = useState('');
   return (
-    <View key={key} className="border space-y-2 m-2 p-1">
+    <View key={item.id} className="space-y-2 m-2 p-2">
       <Text className="text-base font-semibold">{item.name}</Text>
-      <TouchableOpacity className="border bg-gray-100 border-gray-500 p-2 rounded-lg">
-        <Text className="text-sm text-gray-400 font-medium">
-          {item.placeholder}
-        </Text>
-      </TouchableOpacity>
+      <TextInput
+        className="border bg-gray-100 border-gray-500 p-3 rounded-lg text-base"
+        placeholder={item.placeholder}
+        onChangeText={text => setValue(text)}
+        value={value}
+      />
     </View>
   );
 };

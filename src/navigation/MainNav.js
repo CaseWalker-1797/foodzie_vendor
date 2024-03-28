@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AppNav from './AppNav';
 import {checkUser} from '../api/API';
 import SplashScreen from '../screens/SplashScreen';
+import UploadDocScreen from '../screens/UploadDocScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const MainNav = () => {
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Auth" component={AuthNav} />
         <Stack.Screen name="App" component={AppNav} />
+        <Stack.Screen name="UploadDoc" component={UploadDocScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

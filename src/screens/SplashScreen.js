@@ -18,7 +18,7 @@ const SplashScreen = () => {
     const value = await AsyncStorage.getItem('userToken');
     console.log('value', value);
     setTimeout(() => {
-      navigation.navigate(value ? 'Auth' : 'Auth');
+      navigation.navigate(value ? 'App' : 'Auth');
     }, 3000);
   };
 

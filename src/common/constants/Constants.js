@@ -35,6 +35,52 @@ export const personalInfoField = [
     placeholder: 'Enter your secondary number',
   },
 ];
+
+export const docUploadFeild = [
+  {
+    id: 1,
+    name: 'Personal Documents',
+    message: 'Please upload mentioned documents for verification purpose.',
+    upload: [
+      {
+        id: 1,
+        name: 'Aadhar Card',
+        message:
+          'Please upload both front and back side of your Aadhar Card for verification purpose.',
+        go: 'UploadDoc',
+      },
+      {
+        id: 2,
+        name: 'PAN Card',
+        message:
+          'Please upload front side of your PAN Card for verification purpose.',
+        go: 'UploadDoc',
+      },
+      {
+        id: 3,
+        name: 'Driving License',
+        message:
+          'Please upload front side of your Driving License for verification purpose.',
+        go: 'UploadDoc',
+      },
+    ],
+    go: 'DocVerification',
+  },
+  {
+    id: 2,
+    name: 'Vehicle Details',
+    message: 'Please upload mentioned documents for verification purpose.',
+    upload: [],
+    go: 'DocVerification',
+  },
+  {
+    id: 3,
+    name: 'Bank Details',
+    message: 'Please upload mentioned documents for verification purpose.',
+    upload: [],
+  },
+];
+
 export const accountOptions = [
   {
     id: 1,
